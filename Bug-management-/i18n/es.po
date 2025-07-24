@@ -1,3 +1,0 @@
-# Spanish translation placeholder
-msgid "Bug Management"
-msgstr "Gestión de Errores"

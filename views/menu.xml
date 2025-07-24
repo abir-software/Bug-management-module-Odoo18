@@ -1,0 +1,5 @@
+<!-- menu.xml placeholder -->
+<odoo>
+    <menuitem id="menu_management_bug_root" name="Bug Management"/>
+    <menuitem id="menu_management_bug" name="Bugs" parent="menu_management_bug_root"/>
+</odoo>

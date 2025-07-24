@@ -1,0 +1,41 @@
+<odoo>
+    <record id="view_bug_management_pivot" model="ir.ui.view">
+        <field name="name">bug.management.pivot</field>
+        <field name="model">bug.management</field>
+        <field name="arch" type="xml">
+            <pivot string="Bug Analysis">
+                <field name="state"/>
+                <field name="severity"/>
+                <field name="assigned_to_id"/>
+                <field name="reported_by_id"/>
+                <field name="project_id"/>
+                <field name="solve_time" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_bug_management_graph" model="ir.ui.view">
+        <field name="name">bug.management.graph</field>
+        <field name="model">bug.management</field>
+        <field name="arch" type="xml">
+            <graph string="Bug Statistics" type="bar">
+                <field name="state"/>
+                <field name="severity"/>
+                <field name="assigned_to_id"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="bug_dashboard_action" model="ir.actions.act_window">
+        <field name="name">Bug Dashboard</field>
+        <field name="res_model">bug.management</field>
+        <field name="view_mode">pivot,graph,kanban,tree,form</field>
+        <field name="search_view_id" ref="bug_management_search"/>
+        <field name="help" type="html">
+            <p>
+                <strong>Dashboard for Bug Management</strong><br/>
+                Analyze, filter, and visualize bug statistics by state, assignee, and time.
+            </p>
+        </field>
+    </record>
+</odoo>

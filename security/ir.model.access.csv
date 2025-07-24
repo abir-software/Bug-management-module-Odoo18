@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bug_management_user,bug.management.user,model_bug_management,base.group_user,1,1,1,0
+access_bug_management_manager,bug.management.manager,model_bug_management,project.group_project_manager,1,1,1,1
+access_bug_management_tag_user,bug.management.tag.user,model_bug_management_tag,base.group_user,1,1,1,0

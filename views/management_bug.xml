@@ -1,0 +1,133 @@
+<odoo>
+    <record id="bug_management_form" model="ir.ui.view">
+        <field name="name">bug.management.form</field>
+        <field name="model">bug.management</field>
+        <field name="arch" type="xml">
+            <form string="Bug">
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <field name="description"/>
+                        <field name="steps_to_reproduce"/>
+                        <field name="severity"/>
+                        <field name="state" widget="statusbar" statusbar_visible="new,assigned,in_progress,resolved,closed"/>
+                        <field name="project_id"/>
+                        <field name="reported_by_id" readonly="1"/>
+                        <field name="assigned_to_id"/>
+                        <field name="tags" widget="many2many_tags"/>
+                        <field name="note"/>
+                    </group>
+                    <group>
+                        <field name="solve_date" readonly="1"/>
+                        <field name="solve_time" readonly="1"/>
+                        <field name="closed_by_id" readonly="1"/>
+                    </group>
+                    <footer>
+                        <button name="action_assign" type="object" string="Assign To Me" class="btn-primary" attrs="{'invisible':[('state','!=','new')]}"/>
+                        <button name="action_in_progress" type="object" string="Start Progress" class="btn-info" attrs="{'invisible':[('state','!=','assigned')]}"/>
+                        <button name="action_resolve" type="object" string="Resolve" class="btn-success" attrs="{'invisible':[('state','!=','in_progress')]}"/>
+                        <button name="action_close" type="object" string="Close" class="btn-secondary" attrs="{'invisible':[('state','!=','resolved')]}"/>
+                        <button name="action_cancel" type="object" string="Cancel" class="btn-danger" attrs="{'invisible':[('state','in',['closed','cancelled'])]}"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="bug_management_tree" model="ir.ui.view">
+        <field name="name">bug.management.tree</field>
+        <field name="model">bug.management</field>
+        <field name="arch" type="xml">
+            <tree decoration-info="state=='new'" decoration-success="state=='closed'" decoration-danger="state=='cancelled'">
+                <field name="name"/>
+                <field name="state"/>
+                <field name="severity"/>
+                <field name="assigned_to_id"/>
+                <field name="project_id"/>
+                <field name="reported_by_id"/>
+                <field name="solve_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="bug_management_kanban" model="ir.ui.view">
+        <field name="name">bug.management.kanban</field>
+        <field name="model">bug.management</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click oe_kanban_card {{ record.state.raw_value }}">
+                            <strong>
+                                <field name="name"/>
+                            </strong>
+                            <div><field name="severity"/></div>
+                            <div><field name="state"/></div>
+                            <div><field name="assigned_to_id"/></div>
+                            <div><field name="project_id"/></div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="bug_management_search" model="ir.ui.view">
+        <field name="name">bug.management.search</field>
+        <field name="model">bug.management</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="state"/>
+                <field name="severity"/>
+                <field name="assigned_to_id"/>
+                <filter string="Unsolved" domain="[('state','not in',['closed','resolved','cancelled'])]" name="unsolved"/>
+                <filter string="Solved" domain="[('state','in',['closed','resolved'])]" name="solved"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="bug_management_action" model="ir.actions.act_window">
+        <field name="name">All Bugs</field>
+        <field name="res_model">bug.management</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="search_view_id" ref="bug_management_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first bug!
+            </p>
+        </field>
+    </record>
+
+    <!-- Bug Tag Views -->
+    <record id="bug_management_tag_tree" model="ir.ui.view">
+        <field name="name">bug.management.tag.tree</field>
+        <field name="model">bug.management.tag</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="color"/>
+            </tree>
+        </field>
+    </record>
+    <record id="bug_management_tag_form" model="ir.ui.view">
+        <field name="name">bug.management.tag.form</field>
+        <field name="model">bug.management.tag</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="name"/>
+                    <field name="color"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="bug_tag_action" model="ir.actions.act_window">
+        <field name="name">Bug Tags</field>
+        <field name="res_model">bug.management.tag</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

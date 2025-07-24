@@ -1,0 +1,11 @@
+<odoo>
+    <record id="demo_bug_1" model="bug.management">
+        <field name="name">Login Error on Website</field>
+        <field name="description">Cannot login with correct credentials.</field>
+        <field name="steps_to_reproduce">1. Go to Login Page. 2. Enter correct user/pass. 3. Click login. 4. Observe error.</field>
+        <field name="severity">major</field>
+        <field name="state">new</field>
+        <field name="reported_by_id" ref="base.user_admin"/>
+        <field name="project_id" ref="project.project_project_1"/>
+    </record>
+</odoo>

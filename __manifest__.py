@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Pro QA Bug Management (3D & Animated)",
+    'name': "Bug Management Module",
     'summary': "Enterprise QA Bug Tracking, 3D Kanban, Bulk Assignment, Dashboard, Analytics",
     'description': """
         Next-level QA Bug Management for Odoo 18: animated kanban, stylish dashboards, bulk assignment wizard, analytics.
@@ -29,6 +29,7 @@
     ],
     'assets': {
         'web.assets_backend': [
+            'static/description/icon.png',
             'Bug-management-module-Odoo18/static/src/css/bug_management.css',
         ],
     },
@@ -37,5 +38,5 @@
     ],
     'installable': True,
     'application': True,
-    'auto_install': False,  
+    'auto_install': False,
 }

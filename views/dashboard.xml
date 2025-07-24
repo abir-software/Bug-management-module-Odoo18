@@ -1,0 +1,27 @@
+<dashboard>
+    <header>
+        <title>Bug Management Dashboard</title>
+    </header>
+    <content>
+        <section>
+            <h1>Welcome to the Bug Management Dashboard</h1>
+            <p>Here you can manage and track all your bugs efficiently.</p>
+        </section>
+        <section>
+            <h2>Recent Bugs</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Assigned To</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic bug entries will be populated here -->
+                </tbody>
+            </table>
+        </section>
+    </content>
+</dashboard>

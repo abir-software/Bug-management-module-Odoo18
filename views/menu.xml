@@ -1,0 +1,5 @@
+<menu>
+    <item id="menu_management_bug" name="Management Bug" sequence="10">
+        <action ref="action_management_bug"/>
+    </item>
+</menu>

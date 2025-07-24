@@ -1,0 +1,40 @@
+# Translations for the project in Spanish
+
+msgid "Bug Management"
+msgstr "Gestión de Errores"
+
+msgid "Create Bug"
+msgstr "Crear Error"
+
+msgid "Edit Bug"
+msgstr "Editar Error"
+
+msgid "Delete Bug"
+msgstr "Eliminar Error"
+
+msgid "Bug List"
+msgstr "Lista de Errores"
+
+msgid "Status"
+msgstr "Estado"
+
+msgid "Assigned To"
+msgstr "Asignado A"
+
+msgid "Description"
+msgstr "Descripción"
+
+msgid "Priority"
+msgstr "Prioridad"
+
+msgid "Save"
+msgstr "Guardar"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Are you sure you want to delete this bug?"
+msgstr "¿Está seguro de que desea eliminar este error?"
+
+msgid "No bugs found."
+msgstr "No se encontraron errores."

@@ -1,6 +1,0 @@
-<odoo>
-    <menuitem id="menu_bug_root" name="Bug Management" sequence="10"/>
-    <menuitem id="menu_bug_dashboard" name="Dashboard" parent="menu_bug_root" sequence="1" action="bug_dashboard_action"/>
-    <menuitem id="menu_bug_tree" name="All Bugs" parent="menu_bug_root" sequence="2" action="bug_management_action"/>
-    <menuitem id="menu_bug_tag" name="Tags" parent="menu_bug_root" sequence="3" action="bug_tag_action"/>
-</odoo>

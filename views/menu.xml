@@ -1,5 +1,10 @@
-<menu>
-    <item id="menu_management_bug" name="Management Bug" sequence="10">
-        <action ref="action_management_bug"/>
-    </item>
-</menu>
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="bug_management_menu_root" name="Bug Management" sequence="10"/>
+    
+    <menuitem id="bug_menu_main" name="Bugs" parent="bug_management_menu_root" action="action_bug_management_bug"/>
+    <menuitem id="bug_menu_dashboard" name="Dashboard" parent="bug_management_menu_root" action="action_bug_dashboard"/>
+    
+    <menuitem id="bug_configuration_menu" name="Configuration" parent="bug_management_menu_root" sequence="100"/>
+    <menuitem id="bug_tags_menu" name="Tags" parent="bug_configuration_menu" action="action_bug_tags"/>
+</odoo>

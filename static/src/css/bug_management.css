@@ -1,44 +1,36 @@
-/ my-project / my-project / static / src / css / bug_management.css
-
-/* This file contains the CSS styles for the bug management interface */
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
+/* Bug severity colors */
+.o_bug_severity_critical {
+    color: #d9534f;
+    font-weight: bold;
 }
 
-h1 {
-    color: #333;
+.o_bug_severity_high {
+    color: #f0ad4e;
 }
 
-.bug-list {
-    list-style-type: none;
-    padding: 0;
+.o_bug_severity_medium {
+    color: #5bc0de;
 }
 
-.bug-item {
-    background: #fff;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-    padding: 15px;
-    border-radius: 5px;
+.o_bug_severity_low {
+    color: #5cb85c;
 }
 
-.bug-item:hover {
-    background: #f9f9f9;
+/* Dashboard styling */
+.o_bug_dashboard .o_kanban_view {
+    padding: 8px;
 }
 
-.button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.o_bug_dashboard .o_kanban_record {
+    margin-bottom: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.button:hover {
-    background-color: #0056b3;
+/* Kanban state colors */
+.o_kanban_record .o_kanban_state_blocked {
+    background-color: #f8d7da;
+}
+
+.o_kanban_record .o_kanban_state_done {
+    background-color: #d4edda;
 }

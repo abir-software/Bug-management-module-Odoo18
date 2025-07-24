@@ -1,8 +1,9 @@
-<assets>
-    <css>
-        <file>static/src/css/bug_management.css</file>
-    </css>
-    <js>
-        <file>static/src/js/bug_management.js</file>
-    </js>
-</assets>
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/bug_management_module/static/src/css/bug_management.css"/>
+            <script type="text/javascript" src="/bug_management_module/static/src/js/bug_management.js"></script>
+        </xpath>
+    </template>
+</odoo>

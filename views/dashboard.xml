@@ -1,27 +1,33 @@
-<dashboard>
-    <header>
-        <title>Bug Management Dashboard</title>
-    </header>
-    <content>
-        <section>
-            <h1>Welcome to the Bug Management Dashboard</h1>
-            <p>Here you can manage and track all your bugs efficiently.</p>
-        </section>
-        <section>
-            <h2>Recent Bugs</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Status</th>
-                        <th>Assigned To</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Dynamic bug entries will be populated here -->
-                </tbody>
-            </table>
-        </section>
-    </content>
-</dashboard>
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_bug_dashboard" model="ir.actions.act_window">
+        <field name="name">Bug Dashboard</field>
+        <field name="res_model">bug.management.bug</field>
+        <field name="view_mode">dashboard,kanban,tree,form</field>
+        <field name="view_id" ref="view_bug_dashboard"/>
+        <field name="context">{'search_default_group_by_status': 1}</field>
+    </record>
+    
+    <record id="view_bug_dashboard" model="ir.ui.view">
+        <field name="name">bug.dashboard</field>
+        <field name="model">bug.management.bug</field>
+        <field name="arch" type="xml">
+            <dashboard>
+                <view type="kanban" ref="view_bug_management_kanban"/>
+                <group>
+                    <group string="Bug Statistics">
+                        <aggregate name="total_bugs" string="Total Bugs" domain="[]" field="id" group_operator="count"/>
+                        <aggregate name="open_bugs" string="Open Bugs" domain="[('status','in',['new','assigned','in_progress'])]" field="id" group_operator="count"/>
+                        <aggregate name="critical_bugs" string="Critical Bugs" domain="[('severity','=','critical')]" field="id" group_operator="count"/>
+                    </group>
+                    <group string="Status Distribution">
+                        <pie chart="1" string="Bugs by Status">
+                            <field name="status" type="row"/>
+                            <field name="id" operator="+"/>
+                        </pie>
+                    </group>
+                </group>
+            </dashboard>
+        </field>
+    </record>
+</odoo>

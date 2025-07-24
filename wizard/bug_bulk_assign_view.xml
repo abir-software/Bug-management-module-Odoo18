@@ -1,20 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_bug_bulk_assign_wizard" model="ir.ui.view">
+    <record id="view_bug_bulk_assign_wizard_form" model="ir.ui.view">
         <field name="name">bug.bulk.assign.wizard.form</field>
         <field name="model">bug.bulk.assign.wizard</field>
         <field name="arch" type="xml">
             <form string="Bulk Assign Bugs">
                 <sheet>
                     <group>
-                        <field name="bug_ids" widget="many2many_tags" options="{'no_create': True}"/>
-                        <field name="assignee_id" required="1"/>
+                        <field name="user_id" widget="res.users"/>
+                        <field name="note"/>
                     </group>
                 </sheet>
                 <footer>
-                    <button string="Assign" type="object" name="action_assign_bugs" class="btn-primary"/>
+                    <button name="action_bulk_assign" string="Assign" type="object" class="btn-primary"/>
                     <button string="Cancel" class="btn-secondary" special="cancel"/>
                 </footer>
             </form>
         </field>
     </record>
+    
+    <act_window id="action_bug_bulk_assign_wizard"
+                name="Bulk Assign Bugs"
+                res_model="bug.bulk.assign.wizard"
+                view_mode="form"
+                target="new"
+                context="{'default_user_id': active_id}"/>
 </odoo>

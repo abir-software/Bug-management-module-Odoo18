@@ -1,20 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <template id="management_bug_template">
-            <t t-call="web.html_container">
-                <t t-slot="title">Management Bug</t>
-                <t t-slot="body">
-                    <h1>Manage Bugs</h1>
-                    <div>
-                        <t t-foreach="bugs" t-as="bug">
-                            <div>
-                                <h2><t t-esc="bug.name"/></h2>
-                                <p><t t-esc="bug.description"/></p>
+    <template id="bug_dashboard_template">
+        <t t-call="web.html_container">
+            <t t-call="web.bug_dashboard_layout">
+                <div class="container">
+                    <h1>Bug Management Dashboard</h1>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    Bug Statistics
+                                </div>
+                                <div class="card-body">
+                                    <p>Total Bugs: <t t-esc="bug_count"/></p>
+                                </div>
                             </div>
-                        </t>
+                        </div>
                     </div>
-                </t>
+                </div>
             </t>
-        </template>
-    </data>
+        </t>
+    </template>
 </odoo>

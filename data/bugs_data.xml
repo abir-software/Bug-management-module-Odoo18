@@ -1,32 +1,40 @@
-<bugs>
-    <bug>
-        <id>1</id>
-        <title>Bug Title 1</title>
-        <description>Description of bug 1.</description>
-        <status>open</status>
-        <priority>high</priority>
-        <assigned_to>User A</assigned_to>
-        <created_at>2023-01-01</created_at>
-        <updated_at>2023-01-02</updated_at>
-    </bug>
-    <bug>
-        <id>2</id>
-        <title>Bug Title 2</title>
-        <description>Description of bug 2.</description>
-        <status>closed</status>
-        <priority>medium</priority>
-        <assigned_to>User B</assigned_to>
-        <created_at>2023-01-03</created_at>
-        <updated_at>2023-01-04</updated_at>
-    </bug>
-    <bug>
-        <id>3</id>
-        <title>Bug Title 3</title>
-        <description>Description of bug 3.</description>
-        <status>in_progress</status>
-        <priority>low</priority>
-        <assigned_to>User C</assigned_to>
-        <created_at>2023-01-05</created_at>
-        <updated_at>2023-01-06</updated_at>
-    </bug>
-</bugs>
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="bug_demo_1" model="bug.management.bug">
+        <field name="name">Login page not loading</field>
+        <field name="description">Users cannot access the login page, getting 500 error</field>
+        <field name="severity">critical</field>
+        <field name="priority">3</field>
+        <field name="status">new</field>
+    </record>
+    
+    <record id="bug_demo_2" model="bug.management.bug">
+        <field name="name">Dashboard layout issue</field>
+        <field name="description">Dashboard widgets are overlapping on mobile devices</field>
+        <field name="severity">medium</field>
+        <field name="priority">1</field>
+        <field name="status">in_progress</field>
+    </record>
+    
+    <record id="bug_demo_3" model="bug.management.bug">
+        <field name="name">Profile picture upload fails</field>
+        <field name="description">Users cannot upload profile pictures larger than 1MB</field>
+        <field name="severity">high</field>
+        <field name="priority">2</field>
+        <field name="status">assigned</field>
+    </record>
+        <record id="bug_tag_ui" model="bug.management.tag">
+        <field name="name">UI</field>
+        <field name="color">1</field>
+    </record>
+
+    <record id="bug_tag_backend" model="bug.management.tag">
+        <field name="name">Backend</field>
+        <field name="color">2</field>
+    </record>
+
+    <record id="bug_tag_security" model="bug.management.tag">
+        <field name="name">Security</field>
+        <field name="color">3</field>
+    </record>
+</odoo>

@@ -32,3 +32,39 @@ It brings 3D-animated Kanban boards, dashboards, and analytics—plus bulk bug a
 1. **Copy the module folder** into your Odoo 18 `addons/` directory.
 
 2. **Restart the Odoo server:**
+
+bug_management_module/
+├── __init__.py
+├── __manifest__.py
+├── controllers/
+│   ├── __init__.py
+│   └── main.py
+├── data/
+│   └── bugs_data.xml
+├── models/
+│   ├── __init__.py
+│   └── management_bug.py
+├── security/
+│   ├── ir.model.access.csv
+│   └── management_bug_security.xml
+├── static/
+│   ├── description/
+│   │   ├── icon.png
+│   │   └── screenshot_management_bug.png
+│   └── src/
+│       ├── css/
+│       │   └── bug_management.css
+│       └── js/
+│           └── bug_management.js
+├── views/
+│   ├── assets.xml
+│   ├── dashboard.xml
+│   ├── management_bug.xml
+│   ├── menu.xml
+│   └── templates.xml
+├── wizard/
+│   ├── __init__.py
+│   ├── bug_bulk_assign.py
+│   └── bug_bulk_assign_view.xml
+└── i18n/
+    └── es.po

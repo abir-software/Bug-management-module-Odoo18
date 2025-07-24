@@ -37,7 +37,7 @@ class BugManagement(models.Model):
     def _compute_solve_time(self):
         for bug in self:
             if bug.solve_date and bug.create_date and bug.state in ['resolved', 'closed']:
-                delta = fields.Datetime.from_string(bug.solve_date) - fields.Datetime.from_string(bug.create_date)
+                delta = bug.solve_date - bug.create_date
                 bug.solve_time = delta.total_seconds() / 3600.0
             else:
                 bug.solve_time = 0.0

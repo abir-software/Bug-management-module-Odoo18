@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 {
     'name': "Bug Management Module",
     'summary': "Enterprise QA Bug Tracking, 3D Kanban, Bulk Assignment, Dashboard, Analytics",

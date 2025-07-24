@@ -1,2 +1,60 @@
 /* bug_management.css placeholder */
-.bug-title { font-weight: bold; }
+/* 3D/animated Kanban cards */
+.bug3d {
+    border-radius: 18px;
+    box-shadow: 0 6px 28px 0 rgba(60,60,60,0.18), 0 1.5px 5px rgba(40,150,255,0.11);
+    background: linear-gradient(135deg, #fff 65%, #e3f2fd 100%);
+    margin: 8px 4px;
+    transition: box-shadow 0.35s cubic-bezier(.45,1.54,.63,1), transform 0.2s;
+    transform: perspective(800px) rotateY(-2deg) scale(1);
+}
+.bug3d:hover {
+    box-shadow: 0 16px 48px 0 #0037ffa8, 0 2px 7px #18ffff8c;
+    transform: perspective(800px) rotateY(1.5deg) scale(1.05);
+}
+.kanban-title {
+    font-size: 1.23rem;
+    font-weight: bold;
+    margin-top: 0.2em;
+    color: #0d47a1;
+    text-shadow: 0 2px 8px #2196f344;
+}
+.bug-severity .badge {
+    font-size: 0.9rem;
+    box-shadow: 0 1.5px 4px #8884;
+}
+.bug-severity .badge-danger {
+    background: #e53935;
+}
+.bug-severity .badge-warning {
+    background: #fbc02d;
+}
+.bug-severity .badge-success {
+    background: #43a047;
+}
+.kanban-state {
+    font-weight: 500;
+    color: #1565c0;
+}
+.kanban-user, .kanban-project {
+    font-size: 0.98em;
+    color: #1e293b;
+    margin-top: 0.2em;
+}
+.kanban-tags .badge-info {
+    background: #29b6f6;
+    color: #fff;
+    margin: 2px;
+    border-radius: 10px;
+}
+/* Simple pulse animation on critical bugs */
+.severity-critical.bug3d {
+    animation: bug-pulse 1.4s infinite;
+    border-left: 7px solid #d50000;
+}
+@keyframes bug-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.5);}
+    70% { box-shadow: 0 0 14px 12px rgba(255, 82, 82, 0);}
+    100% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);}
+}
+

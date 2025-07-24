@@ -1,0 +1,21 @@
+{
+    'name': 'Bug Management',
+    'version': '1.0',
+    'summary': 'Module for managing bugs in Odoo',
+    'category': 'Tools',
+    'author': 'Your Company',
+    'website': 'https://yourcompany.com',
+    'depends': ['base'],
+    'data': [
+        'security/management_bug_security.xml',
+        'security/ir.model.access.csv',
+        'views/menu.xml',
+        'views/management_bug.xml',
+        'views/dashboard.xml',
+        'data/bugs_data.xml',
+    ],
+    'demo': [],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+}

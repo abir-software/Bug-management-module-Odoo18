@@ -1,0 +1,6 @@
+<!-- management_bug_security.xml placeholder -->
+<odoo>
+    <record id="group_management_bug_user" model="res.groups">
+        <field name="name">Bug User</field>
+    </record>
+</odoo>
